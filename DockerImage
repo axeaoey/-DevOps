@@ -1,0 +1,11 @@
+# ใช้ Base Image เป็น Nginx สำหรับ Static HTML
+FROM nginx:latest
+
+# คัดลอกไฟล์ทั้งหมดไปยัง Nginx Web Directory
+COPY . /usr/share/nginx/html
+
+# เปิด Port 80 ให้ Web Server
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
